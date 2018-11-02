@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>AngularJS</title>
+       <style>
+           #inputText{
+               font-size: 20px;
+               font-style: normal;
+               text-align: center;
+               color:black;
+               
+           }
+       </style>
+</head>
+<script src="angular.min.js"></script>
+<script>  
+    angular.module("app", [])
+    .controller("HelloWorldCtrl", function($scope) {  
+    $scope.message="Hello World" 
+    } )
+</script> 
+<body id="inputText" ng-app="app" >
+    <!-- <div ng-app="">
+        Expression : {{20 + 30}}
+    </div>
+    <div>
+        Expression : {{20 + 30}}
+    </div>
+    <body ng-app="app" ng-init = "first = 'kajal';number = 90; 
+    student = ['riya','kajal','sonam','rohan']; count=0 ;imagesrc = 'angularimage.png'">
+        <input type="text" name="fullname" id="fullname" ng-model="fullname" >
+        <img xng-src="{{imagesrc}}">
+        <input type="button" value="click" ng-click="count=count+1">{{count}}
+        <p ng-bind = "fullname"> this is paragraph </p>
+       
+        <ul >
+            <li ng-repeat =" x in student">{{x}}</li>
+        </ul> -->
+        <table id="inputText">
+        Name: <input type="text" name="fullname" id="fullname" ng-model="fullname" > <br>
+        Email: <input type="email" name="email" ng-model="email" id=""><br>
+        PhoneNumber: <input type="number" name="" id="" ng-model="PhoneNumber" minlength="10" maxlength="10"><br>
+        Adress: <input type="text" name="" id="" ng-model="Address"><br>
+        State: <select>
+            <option value=""></option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Rajasthan">Rajasthan</option>
+        </select><br>
+        <input type="submit" value="save">
+        <input type="reset" value="Reset">
+    </table>
+     
+</body>  
+</html>
+</body>
+</html>

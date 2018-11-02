@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="angular.min.js"></script>
+  <style>
+    input.ng-invalid{
+  background-color: red
+}
+
+
+
+    input[type=text], input[type=number], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+                    
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+            
+            div {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+            }
+            </style>
+  <title>Document</title>
+
+  <script>
+    angular.module("app", []);
+
+
+    angular.module("app")
+      .controller("HelloWorldCtrl", function ($scope) {
+        $scope.message = "Hello World";
+        $scope.user = {
+          firstName: ''
+        }
+        $scope.userList = [];
+
+        $scope.init = function () {
+          alert("hi")
+        }
+
+        $scope.onSubmit = function () {
+          console.log($scope.user);
+          $scope.userList.push($scope.user);
+          $scope.user = {};
+        }
+      })
+  </script>
+</head>
+
+<body ng-app="app">
+  <div ng-controller="HelloWorldCtrl" ng-init="init()">
+
+    <form ng-submit="onSubmit()">
+
+      <label for="fname">Name</label>
+      <input type="text" id="fname" ng-model="user.firstName" name="firstname" placeholder="Your name.." ng-model="serchText"
+        required>
+
+      <label for="emailId">Email</label>
+      <input type="text" id="emailId" ng-model="user.lastName" name="Emailid" placeholder="emailId..">
+
+      <label for="PhoneNumber">PhoneNumber</label>
+      <input type="number" id="PhoneNumber" ng-model="user.phoneNumber" name="PhoneNumber">
+
+      <label for="Address">Address</label>
+      <input type="text" id="Address" name="Address">
+
+      <label for="State">State</label>
+      <select id="State" name="State">
+        <option value=""></option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Goa">Goa</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Rajasthan">Rajasthan</option>
+      </select>
+
+
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+      <input type="text" placeholder="Enter the text" ng-model="serchText">
+      <br>
+    </form>
+
+
+    <table>
+      <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>PhoneNumber</th>
+      </tr>
+      <tr ng-repeat="n in userList" | filter: serchText>
+        <td>{{n.firstName}}</td>
+        <td>{{n.lastName}}</td>
+        <td>{{n.phoneNumber}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
